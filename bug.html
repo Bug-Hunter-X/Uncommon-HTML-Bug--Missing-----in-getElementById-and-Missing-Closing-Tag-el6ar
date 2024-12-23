@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+  <script>
+    // Incorrect way to select an element by ID - missing # symbol
+    let element = document.getElementById("myDiv");
+    if (element){
+        element.innerHTML = "<p>This is some added text.</p>";
+    }
+    //Another error. Missing closing tag for the paragraph created dynamically. This error will not always throw an error but can lead to unexpected behavior.
+    element.innerHTML += "<p>This is another paragraph.";
+  </script>
+</body>
+</html>

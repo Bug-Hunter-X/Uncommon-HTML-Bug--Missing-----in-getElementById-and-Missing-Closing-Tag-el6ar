@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+  <script>
+    // Correct way to select an element by ID
+    let element = document.getElementById("myDiv");
+    if (element){
+        element.innerHTML = "<p>This is some added text.</p>";
+    }
+    //Corrected error, added the missing closing tag
+    element.innerHTML += "<p>This is another paragraph.</p>";
+  </script>
+</body>
+</html>
